@@ -24,34 +24,16 @@
     
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-      <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LEARNING MATERIALS</a>
-      <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRACTICAL EXERCISES</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DISCUSSION FORUM</a>
+      <a href="#learning-materials" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LEARNING MATERIALS</a>
+      <a href="#practicals" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRACTICAL EXERCISES</a>
+      <a href="#discussion" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DISCUSSION FORUM</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
     </div>
     
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px;margin-top:46px">
     
-      <!-- Automatic Slideshow Images -->
-      <div class="mySlides w3-display-container w3-center" style="display: none;">
-        <img src="/w3images/la.jpg" style="width:100%">
-        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-          <h3>Los Angeles</h3>
-          <p><b>We had the best time playing at Venice Beach!</b></p>   
-        </div>
-      </div>
-      <div class="mySlides w3-display-container w3-center" style="display: block;">
-
-      </div>
-      <div class="mySlides w3-display-container w3-center" style="display: none;">
-        <img src="/w3images/chicago.jpg" style="width:100%">
-        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-          <h3>Chicago</h3>
-          <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
-        </div>
-      </div>
-    
+        
       <!-- The Band Section -->
       <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
         <h2 class="w3-wide">Online Learning Tool</h2>
@@ -61,12 +43,20 @@
           adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         
       </div>
-    
+
+
       <!-- The Tour Section -->
       <div class="w3-black" id="tour">
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
           <h2 class="w3-wide w3-center">INFORMATION</h2>
-          <p class="w3-opacity w3-center"><i>Some information will go here</i></p><br>
+          <p class="w3-opacity w3-center"><i>To use the online learning tool:</i></p><br>
+
+          <ol>
+            <li>Go through the <b>learning materials</b></li>
+            <li>Attempt the <b>practicals</b></li>
+            <li>Ask any questions you're unsure of on the <b>discussion forum</b></li>
+            <li>Attempt the <b>assessment quiz</b> to test your knowledge</li>
+          </ol>
     
         </div>
       </div>
@@ -89,6 +79,22 @@
     </footer>
     
     
+
+    <!--JavaScript section-->
+    <script>
+
+    function myFunction() {
+      // Toggle the menu when clicking buttons
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+      
+
+    </script>
     
     
     </body></html>
