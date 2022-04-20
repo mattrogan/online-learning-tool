@@ -17,11 +17,9 @@ def learning_materials():
 def practicals():
    return render_template("practicals.html")
 
-   
 @app.route("/discussion-forum")
 def discussion_forum():
    return render_template("discussion-forum.html")
-
 
 if __name__ == "__main__":
    app.run(debug=True)
