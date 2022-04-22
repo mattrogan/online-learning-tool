@@ -1,5 +1,7 @@
 from flask import Flask, redirect, url_for, render_template
+from database import Database
 app = Flask(__name__)
+db = Database("forum_posts.db")
 
 @app.route('/')
 def default():
