@@ -6,6 +6,17 @@ class Database:
     def __init__(self, db_name):
         with sqlite3.connect(db_name) as self.connect:      # make a connection
             self.cursor = self.connect.cursor()             # create a cursor
+
+        self.create_table("""
+        CREATE TABLE IF NOT EXISTS Posts (
+            
+            PostID                      integer     PRIMARY KEY,
+            Author                      text        NOT NULL,
+            QuestionTitle               text        NOT NULL,
+            QuestionDescription         text        NOT NULL,
+            DatePosted                  date        NOT NULL
+
+        )""")
             
     def create_table(self, sql):
         """Creates a table using SQL passed into method
@@ -27,14 +38,19 @@ class Database:
         self.connect.commit()
 
     def get_post(self, post_id):
-        pass
+        sql = "SELECT * FROM Posts WHERE PostID=?"
+        values = (post_id,)
+        self.cursor.execute(sql, values)
+        data = self.cursor.fetchone()
+        return data
     
     def del_post(self, post_id):
-        pass
+        delete_sql = "DELETE FROM Posts WHERE PostID=?"
+        self.query(delete_sql, (post_id,))
     
-    def new_post(self, author, message):
+    def new_post(self, author, title, description):
         new_post_sql = """
-        INSERT INTO Posts (Author, Message, DatePosted) values (?,?,?)
+        INSERT INTO Posts (Author, QuestionTitle, QuestionDescription, DatePosted) values (?,?,?,?)
         """
         
         # Get date for post
@@ -45,21 +61,9 @@ class Database:
 
         todays_date = f"{day}/{month}/{year}" # format string for DD/MM/YYYY
         
-        values = (author, message, todays_date)
+        values = (author, title, description, todays_date)
         
         self.query(new_post_sql, values)
 
 
 db = Database("forum_posts.db")
-
-table_sql = """
-CREATE TABLE IF NOT EXISTS Posts (
-    
-    PostID                      integer     PRIMARY KEY,
-    Author                      text        NOT NULL,
-    QuestionTitle               text        NOT NULL,
-    QuestionDescription         text        NOT NULL,
-    DatePosted                  date        NOT NULL
-
-)"""
-db.create_table(table_sql)
