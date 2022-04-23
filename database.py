@@ -4,8 +4,8 @@ from datetime import datetime
 class Database:
     
     def __init__(self, db_name):
-        with sqlite3.connect(db_name) as self.connect:  # make a connection
-            self.cursor = self.connect.cursor()           # create a cursor
+        with sqlite3.connect(db_name) as self.connect:      # make a connection
+            self.cursor = self.connect.cursor()             # create a cursor
             
     def create_table(self, sql):
         """Creates a table using SQL passed into method
