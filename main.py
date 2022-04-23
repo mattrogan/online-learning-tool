@@ -23,5 +23,10 @@ def practicals():
 def discussion_forum():
    return render_template("discussion-forum.html")
 
+# Code for an individual post
+@app.route("/discussion-forum/<postNumber>")
+def discussion_forum_post(postNumber):
+   return render_template("discussion-forum-post.html", content=postNumber)
+
 if __name__ == "__main__":
    app.run(debug=True)
