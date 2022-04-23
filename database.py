@@ -48,3 +48,18 @@ class Database:
         values = (author, message, todays_date)
         
         self.query(new_post_sql, values)
+
+
+db = Database("forum_posts.db")
+
+table_sql = """
+CREATE TABLE IF NOT EXISTS Posts (
+    
+    PostID                      integer     PRIMARY KEY,
+    Author                      text        NOT NULL,
+    QuestionTitle               text        NOT NULL,
+    QuestionDescription         text        NOT NULL,
+    DatePosted                  date        NOT NULL
+
+)"""
+db.create_table(table_sql)
