@@ -1,5 +1,13 @@
-from flask import Flask, redirect, url_for, render_template
+import sqlite3
+import sqlite3
+from flask import Flask, redirect, render_template
+
 app = Flask(__name__)
+
+def get_db_connection():
+   conn = sqlite3.connect("forum_posts.db")
+   conn.row_factory = sqlite3.Row
+   return conn
 
 @app.route('/')
 def default():
@@ -19,7 +27,20 @@ def practicals():
 
 @app.route("/discussion-forum")
 def discussion_forum():
-   return render_template("discussion-forum.html")
+   # Establish connection with database
+   conn = get_db_connection()
+   posts = conn.execute("SELECT * FROM Posts ORDER BY DatePosted DESC").fetchall()
+   conn.close()
+   return render_template("discussion-forum.html", posts=posts)
+
+@app.route("/discussion-forum/post/<id>")
+def display_post(): # Function to display an individual post and its comments
+   pass
+
+# Code for an individual post
+@app.route("/discussion-forum/<postNumber>")
+def discussion_forum_post(postNumber):
+   return render_template("discussion-forum-post.html", content=postNumber)
 
 if __name__ == "__main__":
    app.run(debug=True)
