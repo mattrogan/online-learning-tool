@@ -27,10 +27,15 @@ def practicals():
 
 @app.route("/discussion-forum")
 def discussion_forum():
+   # Establish connection with database
    conn = get_db_connection()
    posts = conn.execute("SELECT * FROM Posts").fetchall()
    conn.close()
    return render_template("discussion-forum.html", posts=posts)
+
+@app.route("/discussion-forum/post/<id>")
+def display_post(): # Function to display an individual post and its comments
+   pass
 
 # Code for an individual post
 @app.route("/discussion-forum/<postNumber>")
