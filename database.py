@@ -10,8 +10,8 @@ class Database:
         self.create_table("""
         CREATE TABLE IF NOT EXISTS Posts (
             
-            PostID                      integer     PRIMARY KEY,
-            Author                      text        NOT NULL,
+            PostID                      integer     PRIMARY KEY     AUTOINCREMENT,
+            Author                      text        NOT NULL        DEFAULT CURRENT_TIMESTAMP,
             QuestionTitle               text        NOT NULL,
             QuestionDescription         text        NOT NULL,
             DatePosted                  date        NOT NULL
@@ -43,6 +43,12 @@ class Database:
         self.cursor.execute(sql, values)
         data = self.cursor.fetchone()
         return data
+
+    def get_all_posts(self):
+        sql = "SELECT * FROM Posts"
+        self.cursor.execute(sql)
+        data = self.cursor.fetchall()
+        return data
     
     def del_post(self, post_id):
         delete_sql = "DELETE FROM Posts WHERE PostID=?"
@@ -61,7 +67,7 @@ class Database:
 
         todays_date = f"{day}/{month}/{year}" # format string for DD/MM/YYYY
         
-        values = (author, title, description, todays_date)
+        values = (author, title, description, todays_date) #todays_date removed
         
         self.query(new_post_sql, values)
 
