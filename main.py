@@ -1,7 +1,13 @@
-from flask import Flask, redirect, url_for, render_template
-from database import Database
+import sqlite3
+import sqlite3
+from flask import Flask, redirect, render_template
+
 app = Flask(__name__)
-db = Database("forum_posts.db")
+
+def get_db_connection():
+   conn = sqlite3.connect("forum_posts.db")
+   conn.row_factory = sqlite3.Row
+   return conn
 
 @app.route('/')
 def default():
@@ -21,7 +27,10 @@ def practicals():
 
 @app.route("/discussion-forum")
 def discussion_forum():
-   return render_template("discussion-forum.html")
+   conn = get_db_connection()
+   posts = conn.execute("SELECT * FROM Posts").fetchall()
+   conn.close()
+   return render_template("discussion-forum.html", posts=posts)
 
 # Code for an individual post
 @app.route("/discussion-forum/<postNumber>")

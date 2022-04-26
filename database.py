@@ -73,3 +73,10 @@ class Database:
 
 
 db = Database("forum_posts.db")
+
+
+auth = input("Enter post author: ")
+title = input("Enter title of your question")
+qu = input("Give more details")
+
+db.new_post(auth, title, qu)
