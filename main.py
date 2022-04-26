@@ -29,7 +29,7 @@ def practicals():
 def discussion_forum():
    # Establish connection with database
    conn = get_db_connection()
-   posts = conn.execute("SELECT * FROM Posts").fetchall()
+   posts = conn.execute("SELECT * FROM Posts ORDER BY DatePosted DESC").fetchall()
    conn.close()
    return render_template("discussion-forum.html", posts=posts)
 
