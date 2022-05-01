@@ -33,14 +33,13 @@ def discussion_forum():
    conn.close()
    return render_template("discussion-forum.html", posts=posts)
 
-@app.route("/discussion-forum/post/<id>")
-def display_post(): # Function to display an individual post and its comments
-   pass
-
 # Code for an individual post
-@app.route("/discussion-forum/<postNumber>")
-def discussion_forum_post(postNumber):
-   return render_template("discussion-forum-post.html", content=postNumber)
+@app.route("/post<post_id>")
+def discussion_forum_post(post_id):
+   # Establish connection with database
+   conn = get_db_connection()
+   post = conn.execute("SELECT * FROM Posts WHERE PostID=?",(post_id,)).fetchone()
+   return render_template("post.html", post=post)
 
 if __name__ == "__main__":
    app.run(debug=True)
