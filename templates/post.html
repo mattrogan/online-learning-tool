@@ -1,12 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Post{% endblock %}
+{% block title %}{{post["QuestionTitle"]}} -- Discussion Forum{% endblock %}
 {% block content %}
 
 <!--CSS for forum content-->
 <style>
 
-    table {
-        width: 50%;
+    p {
+        font-family: "Lato", sans-serif;
+    }
+
+    h1 {
+        font-family: "Lato", sans-serif;
+        font-size: 20px;
     }
 
     td {
@@ -19,55 +24,49 @@
         text-align: center;
     }
 
-    * {
-    box-sizing: border-box;
-    }
-
-    a {
-        color: #FFFFFF;
-        font-weight: bolder;
-        text-decoration: none;
-    }
-
-    .subforum-header {
-        font-size: 16px;
-        font-weight: bolder;
-    }
-
-
-    .container {
-        margin: 20px;
-        padding: 20px;
-    }
-
-    .subforum-description *{
-        margin-block: 0;
-
-    }
-
-    .subforum-row {
+    .post-row {
         /* To display four cols in one line */
         display: grid;
-        grid-template-columns: 10% 60% 20% 20%;
+        grid-template-columns: 20% 100%;
         
     }
 
-    .subforum-column {
-        padding: 10px;
+    .post-column {
+        padding: 5px;
         margin: 4px;
         border-radius: 5px;
         background-color: #191919;
     }
 
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .post-heading {
+        font-family: "Lato", sans-serif;
+        font-weight: bold;
     }
 
-    .subforum-icon i {
-        font-size: 45px;
+    .post-details {
+        font-family: "Lato", sans-serif;
     }
+
+    .button-container {
+        text-align: right;
+        border: 1px;
+    }
+
+    .button {
+        background-color: #000000;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: "Lato", sans-serif;
+        margin: 2px 2px;
+        cursor: pointer;
+    }
+
+    
 
 </style>
 
@@ -75,7 +74,13 @@
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px;" id="top">
 
     <h2 class="w3-wide">Discussion Forum</h2>
-    <p class="w3-justify w3-center">Ask your questions below!</p>
+    <p class="w3-justify w3-center">Join the discussion below</p>
+
+    
+    <div class="button-container">
+        <button id="add-post" type="button" class="button">Add post to discussion</button>
+        <button id="back" type="button" class="button">Back</button>
+    </div>
 
 </div>
 
@@ -83,39 +88,47 @@
 <div class="w3-black" id="middle">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
     
-        <div class="container" id="forum"> <!--Container of homepage-->
-            <div class="subforum">
-                
-                <!--For loop to generate posts-->
-                {% for post in posts %}
-    
-                    <!--ROW OF THE FORUM-->
-                    <div class="subforum-row"> <!--Row with 4 columns-->
-                        
-        
-                        <!--Col 1: Symbol/'avatar' for the post-->
-                        <div class="subforum-icon subforum-column center">
-                            <i class="fa fa-question-circle" style="font-size:36px"></i>
-                        </div>
-        
-                        <!--Col 2: Overview of the forum-->
-                        <div class="subforum-description subforum-column">
-                            <h1 class="subforum-header"><a href="">{{post["QuestionTitle"]}}</a></h1>
-                            <p>{{post["QuestionDescription"]}}</p>
-                        </div>
-        
-                        <!--Col 3: Number of posts and replies for each forum-->
-                        <div class="subforum-stats subforum-column center">
-                            <span>24 Posts | 15 Topics</span>
-                        </div>
-        
-                        <!--Col 4: Info about last post & user-->
-                        <div class="subforum-info subforum-column">
-                            <p>by <b>{{post["Author"]}}</b> on <b><small>{{post["DatePosted"]}}</small><b></p>
-                        </div>
-        
+        <div class="container" id="post"> <!--Container of homepage-->
+            <div class="post">
+
+
+                <!--Headings for each individual post-->
+                <div class="post-row">
+
+                    <!--Col 1: Post author-->
+                    <div class="post-author post-column">
+                        <p class="post-heading"><b>Author</b></p>
                     </div>
-                {% endfor %}
+                    
+                    <!--Col 2: Post details-->
+                    <div class="post-description post-column">
+
+                        <p class="post-details"><b>Post details</b></p>
+
+                    </div>
+                
+                </div>
+                
+
+                <!--Individual post goes here-->
+                <div class="post-row">
+                
+                    <!--Col 1: Post author-->
+                    <div class="post-author post-column">
+                        <p>Posted by {{post["Author"]}} on {{post["DatePosted"]}}
+                    </div>
+                    
+                    <!--Col 2: Post details-->
+                    <div class="post-description post-column">
+
+                        <h1 class="post-heading">{{post["QuestionTitle"]}}</h1>
+
+                        <p class="post-details">{{post["QuestionDescription"]}}</p>
+
+                    </div>
+                
+                </div>
+                
                 
                 
             </div>
