@@ -29,12 +29,10 @@
                     <input type="text" id="qtitle" name="qtitle"><br><br>
                     <label for="qdesc">Question Description:</label><br>
                     <input type="text" id="qdesc" name="qdesc"><br><br>
-
-                    <!--Submit button-->
-                    <input type="submit" value="Submit question">
-                
+              
 
                 </form>
+                <button type="button" onclick="getFormData()">Get form data</button>
                 
             </div>
         </div>
@@ -45,11 +43,34 @@
 
 
 
-
-<div>
-
+<!--Bottom block to display form data-->
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+<p>Name: </p><br><p id="name_data"></p><br>
+<p>Question Title: </p><br><p id="title_data"></p><br>
+<p>Question Description: </p><br><p id="desc_data"></p><br>
 </div>
 
+
+<script>
+
+    function getFormData() {
+        /**
+         * Function to get data from submission form
+         */
+
+        // Get items of data from the form
+        var submission_name = document.getElementById("name").value;
+        var submission_title = document.getElementById("qtitle").value;
+        var submission_desc = document.getElementById("qdesc").value;
+        
+        // Repeat the values below
+        document.getElementById("name_data").innerHTML = submission_name;
+        document.getElementById("title_data").innerHTML = submission_title;
+        document.getElementById("desc_data").innerHTML = submission_desc;
+    
+    }
+
+</script>
 
 
 {% endblock %}
