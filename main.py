@@ -41,5 +41,11 @@ def discussion_forum_post(post_id):
    post = conn.execute("SELECT * FROM Posts WHERE PostID=?",(post_id,)).fetchone()
    return render_template("post.html", post=post)
 
+# Code to add new post 
+@app.route("/new-post")
+def new_post():
+   conn = get_db_connection()
+   return render_template("new-post.html", conn=conn)
+
 if __name__ == "__main__":
    app.run(debug=True)

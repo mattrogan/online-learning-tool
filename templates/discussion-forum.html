@@ -68,6 +68,25 @@
         font-size: 45px;
     }
 
+    .button-container {
+        text-align: right;
+        border: 1px;
+    }
+
+    .button {
+        background-color: #000000;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: "Lato", sans-serif;
+        margin: 2px 2px;
+        cursor: pointer;
+    }
+
 </style>
 
 <!--Top block-->
@@ -75,6 +94,10 @@
 
     <h2 class="w3-wide">Discussion Forum</h2>
     <p class="w3-justify w3-center">Ask your questions below!</p>
+
+    <div class="button-container">
+        <button id="add-post" type="button" class="button"><a href="new-post">Create new post</a></button>
+    </div>
 
 </div>
 
@@ -126,23 +149,6 @@
 
 <!--Send a question block-->
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px;" id="top">
-    <h2 class="w3-wide" "w3-center">Ask a question here!</h2>
 
-    <div align="center">
-        <table>
-            <tr>
-                <td><label for="author">Enter your name</label></td>
-                <td><input type="text" id="author" name="author"><br><br></td>
-            </tr>
-            <tr>
-                <td><label for="question">What is your question?</label></td>
-                <td><input type="text" id="question" name="question"><br><br></td>
-            </tr>
-
-
-        </table>
-    </div>
-    
-    <button type="button" onclick="alert('Your question has been submitted!')">Click Me!</button>
 </div>
 {% endblock %}
