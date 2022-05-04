@@ -66,6 +66,20 @@
         cursor: pointer;
     }
 
+    .reply-button {
+        background-color: #191919;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: "Lato", sans-serif;
+        margin: 2px 2px;
+        cursor: pointer;
+    }
+
     
 
 </style>
@@ -78,7 +92,6 @@
 
     
     <div class="button-container">
-        <button id="add-post" type="button" class="button"><a href="new-post">Add post to discussion</a></button>
         <button id="back" type="button" class="button"><a href="discussion-forum">Back</a></button>
     </div>
 
@@ -152,7 +165,25 @@
 
                 {% endfor %}
 
-                
+                <form action = "{{ url_for("addcomment") }}" method="POST">
+
+                    <h3 class="w3-center w3-justify w3-wide">Add to the discussion</h3>
+
+                            <label for="post_id">Post ID (DO NOT EDIT)</label><br>
+                            <input type="text" id="post_id" name="post_id" value={{post["PostID"]}}><br><br>
+        
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name"><br><br>
+                            <label for="rtitle">Reply Title:</label><br>
+                            <input type="text" id="rtitle" name="rtitle" value="Re: {{post["QuestionTitle"]}}"><br><br>
+                            <label for="rdesc">Reply Description:</label><br>
+                            <input type="text" id="rdesc" name="rdesc"><br><br>
+                      
+                            <div class="button-container">
+                                <input class="reply-button" type="submit" value="Add reply"><br><br>
+                            </div>
+
+                </form>
                 
                 
             </div>
