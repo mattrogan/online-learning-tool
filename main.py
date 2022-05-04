@@ -29,7 +29,13 @@ def practicals():
 def discussion_forum():
    # Establish connection with database
    conn = get_db_connection()
-   posts = conn.execute("SELECT * FROM Posts ORDER BY DatePosted DESC").fetchall()
+   posts = conn.execute("""SELECT Posts.*, COUNT(Comments.PostID) AS NumComments
+                           FROM Posts
+                           LEFT JOIN Comments
+                           ON (Posts.PostID == Comments.PostID)
+                           GROUP BY Posts.PostID
+                           ORDER BY DatePosted DESC
+   """).fetchall()
    conn.close()
    return render_template("discussion-forum.html", posts=posts)
 
@@ -39,7 +45,11 @@ def discussion_forum_post(post_id):
    # Establish connection with database
    conn = get_db_connection()
    post = conn.execute("SELECT * FROM Posts WHERE PostID=?",(post_id,)).fetchone()
-   return render_template("post.html", post=post)
+   
+   # Get comments for the post
+   comments = conn.execute("SELECT * FROM Comments WHERE PostID=? ORDER BY DatePosted ASC",(post_id,)).fetchall()
+   
+   return render_template("post.html", post=post, comments=comments)
 
 # Code to add new post 
 @app.route("/new-post")
@@ -48,7 +58,7 @@ def new_post():
    return render_template("new-post.html", conn=conn)
 
 # Function to add new posts into database
-@app.route("/addpost", methods=["POST","GET"])
+@app.route("/addpost", methods=["POST", "GET"])
 def addpost():
    if request.method == "POST":
       try:
@@ -57,30 +67,41 @@ def addpost():
          qtitle = request.form["qtitle"]
          qdesc = request.form["qdesc"]
          
-         print(f"""Data received from form:
-               name={name},
-               qtitle={qtitle}
-               qdesc={qdesc}""")
-         
-         print("Establishing connection...")
          conn = get_db_connection()
-         
-         print("Getting cursor")
          cursor = conn.cursor()
-         
-         print("Executing SQL...")
          cursor.execute("INSERT INTO Posts (Author, QuestionTitle, QuestionDescription) VALUES (?,?,?)", (name,qtitle,qdesc))
-         
-         print("Committing changes")
+
          conn.commit()
          status_msg = "Post successfully added"
+
       except:
          conn.rollback()
-         status_msg = "Error in adding post - try again"
+         status_msg = "Error in adding post - please try again"
       finally:
          return render_template("addpost.html", status_msg=status_msg)
          
-         
+@app.route("/addcomment", methods=["POST", "GET"])
+def addcomment():
+   if request.method == "POST":
+      try:
+         # Get data from the reply form
+         post_id = request.form["post_id"]
+         name = request.form["name"]
+         rtitle = request.form["rtitle"]
+         rdesc = request.form["rdesc"]
+
+         conn = get_db_connection()
+         cursor = conn.cursor()
+
+         cursor.execute("INSERT INTO Comments (Author, ReplyTitle, ReplyDesc, PostID) VALUES (?,?,?,?)", (name,rtitle,rdesc,post_id))
+
+         conn.commit()
+         status_msg = "Comment added successfully"
+      except:
+         status_msg = "Error in adding comment - please try again"
+      finally:
+         return render_template("addcomment.html", status_msg=status_msg)
+
       
 
 if __name__ == "__main__":
