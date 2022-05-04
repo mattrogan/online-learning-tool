@@ -21,7 +21,9 @@
         <div class="container" id="forum"> <!--Container of homepage-->
             <div class="subforum">
                 
-                <form>
+                <form action = "{{ url_for("addpost") }}" method="POST">
+
+                <h2>Add your question here</h2>
 
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name"><br><br>
@@ -30,9 +32,10 @@
                     <label for="qdesc">Question Description:</label><br>
                     <input type="text" id="qdesc" name="qdesc"><br><br>
               
+                    <input type="submit" value="submit"><br><br>
 
                 </form>
-                <button type="button" onclick="getFormData()">Get form data</button>
+
                 
             </div>
         </div>
