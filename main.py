@@ -85,28 +85,16 @@ def addcomment():
    if request.method == "POST":
       try:
          # Get data from the reply form
-         print("Getting data from form...")
          post_id = request.form["post_id"]
          name = request.form["name"]
          rtitle = request.form["rtitle"]
          rdesc = request.form["rdesc"]
-         print(f"""
-         post_id = {post_id}
-         name = {name}
-         rtitle = {rtitle}
-         rdesc = {rdesc}
-         """)
 
-         print("Establishing connection")
          conn = get_db_connection()
-
-         print("Creating a cursor")
          cursor = conn.cursor()
 
-         print("Running SQL...")
          cursor.execute("INSERT INTO Comments (Author, ReplyTitle, ReplyDesc, PostID) VALUES (?,?,?,?)", (name,rtitle,rdesc,post_id))
 
-         print("Committing changes")
          conn.commit()
          status_msg = "Comment added successfully"
       except:
