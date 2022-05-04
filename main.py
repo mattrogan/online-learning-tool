@@ -39,7 +39,11 @@ def discussion_forum_post(post_id):
    # Establish connection with database
    conn = get_db_connection()
    post = conn.execute("SELECT * FROM Posts WHERE PostID=?",(post_id,)).fetchone()
-   return render_template("post.html", post=post)
+   
+   # Get comments for the post
+   comments = conn.execute("SELECT * FROM Comments WHERE PostID=? ORDER BY DatePosted DESC",(post_id,)).fetchall()
+   
+   return render_template("post.html", post=post, comments=comments)
 
 # Code to add new post 
 @app.route("/new-post")

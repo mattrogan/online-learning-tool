@@ -110,7 +110,7 @@
                 </div>
                 
 
-                <!--Individual post goes here-->
+                <!--Original post goes here-->
                 <div class="post-row">
                 
                     <!--Col 1: Post author-->
@@ -128,6 +128,30 @@
                     </div>
                 
                 </div>
+
+                <!--Comments for post-->
+                {% for comment in comments %}
+
+                    <div class="post-row">
+    
+                        <!--Col 1: Post author-->
+                        <div class="post-author post-column">
+                            <p>Posted by {{comment["Author"]}} on {{comment["DatePosted"]}}
+                        </div>
+                        
+                        <!--Col 2: Post details-->
+                        <div class="post-description post-column">
+
+                            <h1 class="post-heading">{{comment["ReplyTitle"]}}</h1>
+
+                            <p class="post-details">{{comment["ReplyDesc"]}}</p>
+    
+                        </div>
+                    
+                    </div>
+
+                {% endfor %}
+
                 
                 
                 
@@ -137,7 +161,5 @@
 
     </div>
 </div>
-
-<script src="post.js"></script>
 
 {% endblock %}
