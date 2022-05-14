@@ -1,6 +1,8 @@
 import sqlite3
-import sqlite3
+import requests
+import configparser
 from flask import Flask, redirect, render_template, url_for, request
+
 
 app = Flask(__name__)
 
@@ -130,4 +132,4 @@ def assessment():
 
 
 if __name__ == "__main__":
-   app.run(debug=True)
+   app.run(host="0.0.0.0", port=5000)
