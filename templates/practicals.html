@@ -9,7 +9,7 @@
     <h2 class="w3-wide">Practicals</h2>
     <p class="w3-justify">Here, you will find all the practical exercises for learning this new technical module! Attempt each exercise as best as you can, and remember to use the <a>discussion forum</a> if you have any questions.</p>
 
-    <button><a href="#solutions">Click to go to solutions</a></button>
+    <button onclick="myFunction()">Click to go to solutions</button>
 </div>
 
 <!--Middle block-->
@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="solutions">
+<div id="solutions" class="w3-container w3-content w3-padding-64" style="max-width:800px">
     <h2 class="w3-wide w3-center">PRACTICAL SOLUTIONS</h2>
 
     <p class="w3-justify">Want to check your answers against model solutions? You can go through the solution files here!</p>
@@ -57,5 +57,12 @@
         </div>
     </div>
 </div>
+
+<script>
+function myFunction() {
+    const element = document.getElementById("solutions");
+    element.scrollIntoView();
+}
+</script>
 
 {% endblock %}

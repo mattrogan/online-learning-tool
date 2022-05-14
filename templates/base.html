@@ -1,7 +1,3 @@
-<!--Base template-->
-<!--Will never be rendered by main.py-->
-<!--Child templates inherit and change functionality of this-->
-
 <!DOCTYPE html>
 <html lang="en"><head>
     <title>{% block title %}{% endblock %}</title>
@@ -14,6 +10,16 @@
     <!--External CSS-->
     
     <link rel="stylesheet" href="{{url_for("static", filename="css/main-styles.css")}}">
+
+    <style>
+
+      html {
+        height: 100%;
+        margin: auto;
+        scroll-behavior: smooth;
+      }
+
+    </style>
 
     </head>
     <body style="overflow: visible">
