@@ -9,5 +9,7 @@ The tool is to be used as follows:
 3. Place any questions in the **discussion forum**
 4. Finally, attempt the **assessment quiz** to evaluate your understanding
 
+Please be aware that the tool may not size properly on some screens - this can simply be resolved by zooming in/out, depending on the size of your screen.
+
 ## Questions about the tool
 Any queries about the tool should be directed to Matt Rogan on mr1360@york.ac.uk
