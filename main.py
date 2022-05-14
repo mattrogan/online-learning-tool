@@ -5,7 +5,7 @@ from flask import Flask, redirect, render_template, url_for, request
 app = Flask(__name__)
 
 def get_db_connection():
-   conn = sqlite3.connect("forum_posts.db")
+   conn = sqlite3.connect("database.db")
    conn.row_factory = sqlite3.Row
    return conn
 
@@ -102,7 +102,27 @@ def addcomment():
       finally:
          return render_template("addcomment.html", status_msg=status_msg)
 
-      
+# Page to show content for an individual topic
+@app.route("/topic<topic_no>")
+def topic(topic_no):
+   print("Establishing database connection")
+   conn = get_db_connection()
+
+   topic_details = conn.execute("SELECT * FROM Topics WHERE TopicID=?",(topic_no,)).fetchone()
+
+   # Ensure "next" and "previous" topics wrap around to avoid errors
+   if int(topic_no) == 1:
+      prev_topic = 7
+      next_topic = 2
+   elif int(topic_no) == 7:
+      next_topic = 1
+      prev_topic = 6
+   else:
+      next_topic = int(topic_no)+1
+      prev_topic = int(topic_no)-1
+
+   return render_template("topic.html", topic_details=topic_details, prev_topic=prev_topic, next_topic=next_topic)
+
 
 if __name__ == "__main__":
    app.run(debug=True)
