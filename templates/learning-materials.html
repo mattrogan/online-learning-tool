@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Learning Materials{% endblock %}
 {% block content %}
+
+<link rel="stylesheet" href="{{ url_for("static", filename="css/learning-material-styles.css")}}">
 <!--Top block-->
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="top">
     
@@ -32,11 +34,12 @@
 
     <h2>Files used in tutorials</h2>
 
-    <ol class="w3-justify">
-        <li>File 1</li>
-        <li>File 2</li>
-        <li>File 3</li>
-    </ol>
+    <div class="typewriter-font">
+          <a href="https://drive.google.com/file/d/1LaYHkddOVVtQdiHG_jx1BPt6tf9cpLij/view?usp=sharing">can_vote.py</a>
+          <a href="https://drive.google.com/file/d/1gKHA3-bYaubh4jelKBV5naXoSmfilZQN/view?usp=sharing">simple_window.py</a>
+          <a href="https://drive.google.com/file/d/1ovKy0NGL2lURhsraFOQ71xgbSzWkBzvY/view?usp=sharing">using_widgets.py</a>
+          
+  </div>
 
 
   </div>

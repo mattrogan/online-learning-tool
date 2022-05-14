@@ -16,26 +16,8 @@ body {
     cursor: pointer;
 }
 
-.assessment-button {
-    background-color: #000000;
-    border: none;
-    color: white;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
-    font-family: "Lato", sans-serif;
-    margin: 4px 4px;
-    cursor: pointer;
-}
-
 .button-container {
     text-align: right;
     border: 1px;
 }
 
-.assessment-button-container {
-    text-align: center;
-    border: 1px;
-}
