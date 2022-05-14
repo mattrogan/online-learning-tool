@@ -102,7 +102,12 @@ def addcomment():
       finally:
          return render_template("addcomment.html", status_msg=status_msg)
 
-      
+# Page to show content for an individual topic
+@app.route("/topic<topic_no>")
+def topic(topic_no):
+   conn = get_db_connection()
+   topic_details = conn.execute("SELECT * FROM Topics WHERE TopicID=?",(topic_no,)).fetchone()
+
 
 if __name__ == "__main__":
    app.run(debug=True)
