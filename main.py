@@ -123,6 +123,11 @@ def topic(topic_no):
 
    return render_template("topic.html", topic_details=topic_details, prev_topic=prev_topic, next_topic=next_topic)
 
+# Assessment page
+@app.route("/assessment")
+def assessment():
+   return render_template("assessment.html")
+
 
 if __name__ == "__main__":
    app.run(debug=True)
