@@ -108,13 +108,20 @@ def topic(topic_no):
    print("Establishing database connection")
    conn = get_db_connection()
 
-   print("Getting topic details...")
    topic_details = conn.execute("SELECT * FROM Topics WHERE TopicID=?",(topic_no,)).fetchone()
 
-   print(f"Topic details: {topic_details}")
+   # Ensure "next" and "previous" topics wrap around to avoid errors
+   if int(topic_no) == 1:
+      prev_topic = 7
+      next_topic = 2
+   elif int(topic_no) == 7:
+      next_topic = 1
+      prev_topic = 6
+   else:
+      next_topic = int(topic_no)+1
+      prev_topic = int(topic_no)-1
 
-   print("Rendering template")
-   return render_template("topic.html", topic_details=topic_details)
+   return render_template("topic.html", topic_details=topic_details, prev_topic=prev_topic, next_topic=next_topic)
 
 
 if __name__ == "__main__":
