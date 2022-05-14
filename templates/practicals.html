@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Practicals{% endblock %}
 {% block content %}
+
+<link rel="stylesheet" href="{{ url_for("static", filename="css/practical-styles.css")}}">
+
 <!--Top block-->
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px;" id="top">
     <h2 class="w3-wide">Practicals</h2>
@@ -10,22 +13,46 @@
 <!--Middle block-->
 <div class="w3-black" id="middle">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-        <h2 class="w3-wide w3-center">Exercises</h2>
+        <p class="w3-justify">The practicals for this module are centered around creating a speed converter window that allows the user to enter a speed (in either miles per hour or kilometers per hour), and tells them the equivalent speed in the other measurement. There are three practicals to have a go at:</p>
+        <ul>
+            <li><b>Practical 1</b>, which should be attempted after watching <a href="topic1"><b>Topic 1</b></a> and <a href="topic2"><b>Topic 2</b></a>
+            <li><b>Practical 2</b>, which should be attempted after watching <a href="topic3"><b>Topic 3</b></a> and <a href="topic4"><b>Topic 4</b></a>
+            <li><b>Practical 3</b>, which should be attempted after watching <a href="topic5"><b>Topic 5</b></a> and <a href="topic6"><b>Topic 6</b></a>
+        </ul>
+        <br>
+        <h2 class="w3-wide w3-center">Go through the practicals shown below:</h2>
         <ol>
-            <li><b>Exercise 1:</b> Hello, World!</li>
-            <li><b>Exercise 2:</b> Variables</li>
-            <li><b>Exercise 3:</b> Selection</li>
+            <a href="https://drive.google.com/file/d/1eqGkwrr4WA3n_6ZzJAGVYXVJEOdwy1y0/view?usp=sharing"><li><b>Practical 1:</b> Getting Started</li></a>
+            <a href="https://drive.google.com/file/d/1hksJmCge0O_x9l2NtmHL1WHSFVEDV1CS/view?usp=sharing"><li><b>Practical 2:</b> Setting up a converter</li></a>
+            <a href="https://drive.google.com/file/d/1R0qrUavjNIEnUb7Dy1NCFx0n337oSj8r/view?usp=sharing"><li><b>Practical 3:</b> Adding functionality to our converter</li></a>
         </ol>
+        <p class="w3-justify">Don't forget to go to the <a href="discussion-forum">discussion forum</a> if you have any questions or need any help!</p>
+        <br>
+        
     </div>
 </div>
 
-
 <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">ASSESSMENT</h2>
-    <p class="w3-opacity w3-center"><i>Once you have gone through all learning materials and attempted all practicals, test yourself using this final assessment!</p>
-  
-    <div class="assessment-button-container" style="max-width:800px" id="contact">
-        <button class="assessment-button"><a href="">Take the assessment!</a></button>
+    <h2 class="w3-wide w3-center">PRACTICAL SOLUTIONS</h2>
+
+    <p class="w3-justify">Want to check your answers against model solutions? You can go through the solution files here!</p>
+
+    <ul>
+        <a href="https://drive.google.com/file/d/1gKHA3-bYaubh4jelKBV5naXoSmfilZQN/view?usp=sharing"><li>Solution to Practical 1</a>
+        <a href="https://drive.google.com/file/d/1wb45cmUg9Ubcf5VluW2O1WVuZ9pCFWiO/view?usp=sharing"><li>Solution to Practical 2</a>
+        <a href="https://drive.google.com/file/d/12bZOptDbmQo1UDVbxJDWjNBflBN2Vf6y/view?usp=sharing"><li>Solution to Practical 3</a>
+    </ul>
+</div>
+
+<div class="w3-black" id="middle">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <h2 class="w3-wide w3-center">ASSESSMENT</h2>
+
+        <p class="w3-justify">Once you've gone through all practicals, have a go at the assessment quiz!</p>
+
+        <div class="assessment-button-container" style="max-width:800px" id="contact">
+            <button class="assessment-button"><a href="assessment">Take the assessment!</a></button>
+        </div>
     </div>
 </div>
 
