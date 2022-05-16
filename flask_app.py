@@ -1,6 +1,4 @@
 import sqlite3
-import requests
-import configparser
 from flask import Flask, redirect, render_template, url_for, request
 
 
