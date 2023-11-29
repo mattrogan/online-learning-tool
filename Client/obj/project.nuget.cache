@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Q5I2A/Oh1th80ssHP38P+S315W26CVArwG08YF4xAAb7xrs9fhh+zeYpInr02erAzrSb5Ti+zb33OFv+pMLyg==",
+  "dgSpecHash": "6qxRkDzZmAwgeOrBmHWG5fO5jjwhkXclgPIFl1VLrF5glfCkLS3apg/3OlJbPSE0FPMoZCNwHBYDueyKlZ7XqA==",
   "success": true,
-  "projectFilePath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj",
+  "projectFilePath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj",
   "expectedPackageFiles": [
     "/Users/mattrogan/.nuget/packages/microsoft.aspnetcore.authorization/7.0.12/microsoft.aspnetcore.authorization.7.0.12.nupkg.sha512",
     "/Users/mattrogan/.nuget/packages/microsoft.aspnetcore.components/7.0.12/microsoft.aspnetcore.components.7.0.12.nupkg.sha512",

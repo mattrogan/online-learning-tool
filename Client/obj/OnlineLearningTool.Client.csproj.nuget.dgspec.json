@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj": {}
+    "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj": {}
   },
   "projects": {
-    "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj": {
+    "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj",
+        "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj",
         "projectName": "OnlineLearningTool.Client",
-        "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj",
+        "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj",
         "packagesPath": "/Users/mattrogan/.nuget/packages/",
-        "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/obj/",
+        "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mattrogan/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj": {
-                "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj"
+              "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj": {
+                "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj": {
+    "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj",
+        "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj",
         "projectName": "OnlineLearningTool.Shared",
-        "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj",
+        "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj",
         "packagesPath": "/Users/mattrogan/.nuget/packages/",
-        "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/obj/",
+        "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mattrogan/.nuget/NuGet/NuGet.Config"

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj",
+      "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj",
       "projectName": "OnlineLearningTool.Shared",
-      "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj",
+      "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj",
       "packagesPath": "/Users/mattrogan/.nuget/packages/",
-      "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/obj/",
+      "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mattrogan/.nuget/NuGet/NuGet.Config"

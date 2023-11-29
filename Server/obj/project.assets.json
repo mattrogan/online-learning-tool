@@ -1271,11 +1271,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Server/OnlineLearningTool.Server.csproj",
+      "projectUniqueName": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Server/OnlineLearningTool.Server.csproj",
       "projectName": "OnlineLearningTool.Server",
-      "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Server/OnlineLearningTool.Server.csproj",
+      "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Server/OnlineLearningTool.Server.csproj",
       "packagesPath": "/Users/mattrogan/.nuget/packages/",
-      "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Server/obj/",
+      "outputPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mattrogan/.nuget/NuGet/NuGet.Config"
@@ -1290,11 +1290,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj": {
-              "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Client/OnlineLearningTool.Client.csproj"
+            "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj": {
+              "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Client/OnlineLearningTool.Client.csproj"
             },
-            "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj": {
-              "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/OnlineLearningTool/Shared/OnlineLearningTool.Shared.csproj"
+            "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj": {
+              "projectPath": "/Users/mattrogan/Programming/OnlineLearningTool/online-learning-tool/Shared/OnlineLearningTool.Shared.csproj"
             }
           }
         }
