@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Server.Data.Config;
 
 namespace Server.Data;
 
@@ -11,6 +12,6 @@ public class DataContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfiguration(new TopicConfig());
     }
 }
