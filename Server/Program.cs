@@ -1,4 +1,6 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
+using Server.Data;
+using static System.Environment;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<DataContext>(opts =>
+{
+    var folder = SpecialFolder.LocalApplicationData;
+    var path = GetFolderPath(folder);
+    var dbPath = Path.Join(path, "OnlineLearningTool.db");
+    opts.UseSqlite($"Data Source={dbPath}");
+});
 
 var app = builder.Build();
 
