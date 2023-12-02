@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Shared.Models.LearningMaterials;
@@ -21,7 +17,6 @@ namespace Server.Data.Config
                 .IsRequired();
 
             builder.Property(t => t.Title)
-                .HasMaxLength(255)
                 .IsRequired();
 
             builder.Property(t => t.Content)

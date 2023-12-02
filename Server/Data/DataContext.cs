@@ -13,5 +13,8 @@ public class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new TopicConfig());
+        modelBuilder.ApplyConfiguration(new PostConfig());
+        modelBuilder.ApplyConfiguration(new CommentConfig());
+        modelBuilder.ApplyConfiguration(new PracticalConfig());
     }
 }
